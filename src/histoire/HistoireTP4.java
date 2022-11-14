@@ -33,6 +33,9 @@ public class HistoireTP4 {
 		
 		roro.direBonjour();
 		roro.donner(marco);
+		
+		roro.parler("Je t'ai retrouvé vermine, tu vas payer pour ce que tu as fait à ce pauvre marchand!");
+		roro.provoquer(yoku);
 	}
 
 }
