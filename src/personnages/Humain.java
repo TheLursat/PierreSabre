@@ -56,7 +56,6 @@ public class Humain {
 	}
 	
 	private void memoriser( Humain humain ) {
-		this.nbConnaissances = this.nbConnaissances % this.memoire.length;
 		this.memoire[this.nbConnaissances% this.memoire.length] = humain;
 		this.nbConnaissances = this.nbConnaissances + 1;
 	}
