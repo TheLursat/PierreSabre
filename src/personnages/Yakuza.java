@@ -33,6 +33,12 @@ public class Yakuza extends Humain {
 		this.reputation += 1;
 		this.parler("Ce ronin pensait vraiment pouvoir battre "+this.getNom()+" du clan "+this.clan+" ? Je l'ai dépouillé de ses "+gain+" sous.");
 	}
+	
+	@Override
+	public void direBonjour(){
+		super.direBonjour();
+		this.parler("Mon clan est celui de "+this.clan);
+	}
 
 	/**
 	 * @return the reputation
@@ -40,4 +46,5 @@ public class Yakuza extends Humain {
 	public int getReputation() {
 		return reputation;
 	}
+	
 }
