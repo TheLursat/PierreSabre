@@ -4,6 +4,8 @@ public class Humain {
 	private String nom;
 	private String boisson;
 	private int argent;
+	protected Humain[] memoire = new Humain[30];
+	protected int nbConnaissances = 0;
 	
 	public Humain( String nom, String boisson, int argent) {
 		this.nom = nom;
@@ -50,6 +52,35 @@ public class Humain {
 			this.perdreArgent(prix);
 		}else {
 			this.parler("Je n'ai plus que "+this.argent+" sous en poche. Je ne peut meme pas m'offrir "+bien+" à "+prix+" sous.");
+		}
+	}
+	
+	private void memoriser( Humain humain ) {
+		this.nbConnaissances = this.nbConnaissances % this.memoire.length;
+		this.memoire[this.nbConnaissances% this.memoire.length] = humain;
+		this.nbConnaissances = this.nbConnaissances + 1;
+	}
+	
+	private void repondre( Humain humain){
+		this.direBonjour();
+		this.memoriser(humain);
+	}
+	
+	public void faireConnaissanceAvec(Humain humain) {
+		this.direBonjour();
+		humain.repondre(this);
+		this.memoriser(humain);
+	}
+	
+	public void listerConnaissances() {
+		if(this.nbConnaissances >0) {
+			String phrase = "Je connais beaucoup de monde dont : "+this.memoire[0].getNom();
+			int i = 1;
+			while(i < this.memoire.length && this.memoire[i] != null) {
+				phrase += ", "+this.memoire[i].getNom();
+				i += 1;
+			}
+			this.parler(phrase);
 		}
 	}
 }

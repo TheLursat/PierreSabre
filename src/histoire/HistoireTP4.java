@@ -23,11 +23,11 @@ public class HistoireTP4 {
 		marco.recevoir(15);
 		marco.boire();
 		
-		Yakuza yoku = new Yakuza("Yoku le noir","whisky",30,"Warsong");
+		Yakuza yaku = new Yakuza("Yaku le noir","whisky",30,"Warsong");
 		
-		yoku.direBonjour();
-		yoku.parler("Tiens, tiens, ne serait-ce pas un faible marchant qui passe par là ?");
-		yoku.extorquer(marco);
+		yaku.direBonjour();
+		yaku.parler("Tiens, tiens, ne serait-ce pas un faible marchant qui passe par là ?");
+		yaku.extorquer(marco);
 		
 		Ronin roro = new Ronin("Roro","sochu",60);
 		
@@ -35,7 +35,7 @@ public class HistoireTP4 {
 		roro.donner(marco);
 		
 		roro.parler("Je t'ai retrouvé vermine, tu vas payer pour ce que tu as fait à ce pauvre marchand!");
-		roro.provoquer(yoku);
+		roro.provoquer(yaku);
 	}
 
 }
